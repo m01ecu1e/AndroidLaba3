@@ -35,16 +35,16 @@ public class mainActivity extends Activity {
         listView = (ListView) findViewById(R.id.List1);
         itemList = new ArrayList<>();
 
-//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_list_view,R.id.textItem, itemList);
-//        listView.setAdapter(arrayAdapter);
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Log.i("LIST_VIEW", "item id:  " + i);
-//                selectedItem = i;
-//            }
-//        });
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_list_view,R.id.textItem, itemList);
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("LIST_VIEW", "item id:  " + i);
+                selectedItem = i;
+            }
+        });
 
         Button addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener() {
