@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textSize="18dp"
+        android:text="Добавить" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:textSize="18dp"
+        android:text="Удалить" />
+    <Button
+        android:id="@+id/deleteAllButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:textSize="18dp"
+        android:text="Удалить всё" />
+
+    <TextView
+        android:id="@+id/username"
+        android:text="username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_margin="20sp"
+        />
+
+    <ListView
+        android:id="@+id/List1"
+        android:layout_marginTop="100sp"
+        android:layout_width="match_parent"
+        android:layout_height="581dp" />
+
+
+</FrameLayout>
