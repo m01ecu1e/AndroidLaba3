@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,8 @@ public class mainActivity extends Activity {
     ListView listView;
     private TextView text1;
 
+    Database db = new Database(this);
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class mainActivity extends Activity {
 
         Bundle arguments = getIntent().getExtras();
         String username = arguments.get("username").toString();
+        String password = arguments.get("password").toString();
         TextView usernameText = findViewById(R.id.username);
         usernameText.setText(username);
 
@@ -69,7 +73,6 @@ public class mainActivity extends Activity {
 
                 }
 
-                //itemList.remove(selectedItem);
             }
         });
 
@@ -79,6 +82,19 @@ public class mainActivity extends Activity {
             public void onClick(View v) {
                 itemList.clear();
                 arrayAdapter.notifyDataSetChanged();
+            }
+        });
+
+        Button deleteUserButton = findViewById(R.id.deleteUser);
+        deleteUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (db.deleteUser(new User(username, password))){
+                    Toast.makeText(getApplicationContext(), "Профиль удален", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "Что-то пошло не так", Toast.LENGTH_SHORT).show();
             }
         });
     }
