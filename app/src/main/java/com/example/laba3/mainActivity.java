@@ -85,18 +85,18 @@ public class mainActivity extends Activity {
             }
         });
 
-        Button deleteUserButton = findViewById(R.id.deleteUser);
-        deleteUserButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (db.deleteUser(new User(username, password))){
-                    Toast.makeText(getApplicationContext(), "Профиль удален", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-                else
-                    Toast.makeText(getApplicationContext(), "Что-то пошло не так", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        Button deleteUserButton = findViewById(R.id.deleteUser);
+//        deleteUserButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (db.deleteUser(new User(username, password))){
+//                    Toast.makeText(getApplicationContext(), "Профиль удален", Toast.LENGTH_SHORT).show();
+//                    finish();
+//                }
+//                else
+//                    Toast.makeText(getApplicationContext(), "Что-то пошло не так", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }
 
